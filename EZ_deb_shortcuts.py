@@ -144,9 +144,10 @@ def main():
 
     # print numbers and names of desktop items found
     for s in shortcut_list:
-        print("({0}) {1}".format(
+        print("({0}) {1} - {2}".format(
             s[0],
-            s[1]
+            s[1],
+            s[2]
         ))
 
     print("")  #tidy
