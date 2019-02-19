@@ -89,10 +89,10 @@ def main():
 
     if home_desktop_dir_option:
         print("\nCreate shortcut in \"{}\"?".format(home_desktop_dir))
-        print("[y|Y] to continue | [o|O] for on-screen instructions | [q|Q] to quit : ")
+        print("[y] to continue | [o] for on-screen instructions | [q] to quit : ")
     else:
         print("{} desktop or home folder not detected... don't worry though!\n".format(getuser()))
-        print("[o|O] for on-screen instructions | [q|Q] to quit : ")
+        print("[o] for on-screen instructions | [q] to quit : ")
 
     i = ""  # i; control for loop
     opt1 = 0  # opt1 keeps track of selection. used further along
@@ -104,12 +104,12 @@ def main():
         else :
             i = input()
 
-        if i in ["y", "Y"]:  # write to user's desktop
+        if i.lower() == 'y':  # write to user's desktop
             if home_desktop_dir_option:
                 opt1 = 1
-        elif i in ["o", "O"]:  # onscreen instructions
+        elif i.lower() == 'o':  # onscreen instructions
             opt1 = 2
-        elif i in ["q", "Q"]:  # quit
+        elif i.lower() == 'q':  # quit
             print("\nQuitting...")
             exit()
 
@@ -159,7 +159,7 @@ def main():
     n_range = range(1, len(shortcut_list) + 1)
 
     # user instructions... blah blah
-    print("[{0}-{1}] to select | [q|Q] to quit".format(1, len(shortcut_list)))
+    print("[{0}-{1}] to select | [q] to quit".format(1, len(shortcut_list)))
 
     # main input l0o0p
     while True:
@@ -168,7 +168,7 @@ def main():
         else:
             i = input()
 
-        if i in ["q", "Q"]:
+        if i.lower() == 'q':
             print("\nQuitting...")
             exit()
         else:
